@@ -1,11 +1,11 @@
 [package]
-authors = ["The RustWasm Developers"]
+authors = ["Alex Iansiti <aiansiti@outlook.com>"]
 categories = ["wasm"]
 description = "My super awesome Rust, WebAssembly, and Parcel project!"
 license = "Apache-2.0/MIT"
-name = "rust-parcel"
+name = "kmeans-wasm"
 readme = "./README.md"
-repository = "https://github.com/rustwasm/rust-parcel-template"
+# repository = "https://github.com/rustwasm/rust-parcel-template"
 version = "0.1.0"
 
 [lib]
@@ -13,8 +13,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 cfg-if = "0.1.5"
-wasm-bindgen = "0.2.29"
-
+serde_json = "1.0.39"
 # The `console_error_panic_hook` crate provides better debugging of panics by
 # logging them with `console.error`. This is great for development, but requires
 # all the `std::fmt` and `std::panicking` infrastructure, so isn't great for
@@ -36,6 +35,19 @@ features = [
   'Node',
   'Window',
 ]
+
+[dependencies.serde] 
+version = "1.0.91"
+features=["derive"]
+
+[dependencies.rand]
+version = "0.6.5"
+features = ["wasm-bindgen"]
+
+[dependencies.wasm-bindgen]
+version = "0.2.29"
+features = ["serde-serialize"]
+
 
 [features]
 default = ["console_error_panic_hook"]
