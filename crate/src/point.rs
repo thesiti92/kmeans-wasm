@@ -1,6 +1,5 @@
 use serde::{Deserialize, Serialize};
 use std::ops;
-use wasm_bindgen::prelude::*;
 
 #[derive(Debug, Clone, PartialEq, Copy, Serialize, Deserialize)]
 pub struct Point {
